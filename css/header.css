@@ -8,6 +8,7 @@
 .fixed{
     position:fixed;
     top:0;
+    z-index: 10;
 }
 .logo img{
     display: block;
@@ -81,15 +82,15 @@
     position: relative;
 }
 .white-block{
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #F5F5F5;
+    border-left: 8px solid transparent;
     position:absolute;
     margin: 0 auto;
-    bottom: -27px;
-    left:10px;
-    width: 10px;
-    height: 10px;
-    background-color: #F5F5F5;
-    transform: rotate(45deg);
-    border:0;
+    bottom: -22px;
+    left:8px;
 }
 /***** 隐藏的登录模块****/
 .login{

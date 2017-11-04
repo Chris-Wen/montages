@@ -1,11 +1,13 @@
-header,footer{
-   height: 100px;
-   background-color: #0f0
-}
-
 /*login-part popup dispose*/
+body{
+    position:relative;
+}
+.header-top{
+    min-height: 220px;
+    background-color: #127BAB;  
+}
 .login-mask{
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: black;
@@ -104,16 +106,18 @@ header,footer{
 
 /***detail-body*****/
 .detail-body{
+    margin-top:-80px;
     min-height: 500px;
     background-color: #fff;
     width: 100%;
+    border-top-left-radius:20px; 
+    border-top-right-radius:20px; 
 }
 .content{
     width: 1000px;
     margin: 0 auto;
     background-color: #fff;
     position: relative;
-    z-index: 10;
     padding: 30px 10px;
 }
 .img{

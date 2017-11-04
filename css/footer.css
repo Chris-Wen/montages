@@ -1,105 +1,45 @@
+
+
+.flex-end{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  -webkit-justify-content:space-around;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+}
+.line{
+    margin: 50px 0 20px 0;
+    height: 3px;
+    background: -webkit-linear-gradient(left, purple ,#0f0, red,#ff0,#0ff); 
+    background: -o-linear-gradient(right, purple ,#0f0, red,#ff0,#0ff);
+    background: -moz-linear-gradient(right, purple ,#0f0, red,#ff0,#0ff); 
+    background: linear-gradient(to right, purple ,#0f0, red,#ff0,#0ff); 
+}
 .footer{
-  width: 1423px;
-  height: 550px;
+  width: 100%;
   background-color: #fff;
 }
-.promises{
-  display: block;
-  width: 1200px;
-  height: 28px;
-  padding: 50px 0 55px 0;
+.end-content{
+  min-height: 100px;
   margin: 0 auto;
-  border-bottom: 1px solid #ccc;
-}
-.promises li{
-  height:24px;
-  width:300px;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.promises li a{
-  color: #000;
-  font: 20px "microsoft yahei";
-}
-.f-directory{
-  width: 1423px;
-  height: 330px;
-  position: relative;
-}
-.f-lists{
-  width: 960px;
-  height: 260px;
-  margin-left: 115px;
-  margin-top: 60px;
-  float: left;
-  color: #000;
-  font: 13px "microsoft yahei";
-}
-.f-list{
-  width: 192px;
-  height: 171px;
-  float: left;
-}
-.f-list-title{
-  margin-bottom: 10px;
-}
-.f-list dd{
-  height: 28px;
-  line-height: 28px;
-  font: 12px "microsoft yahei";
-}
-.contact-way{
-  width: 240px;
-  height: 106px;
-  float: right;
-  /*position: absolute;*/
-  margin-top:60px;
-  margin-right:105px;
-}
-.number{
-  float: right;
-  font-size: 32px;
-}
-.service-phone,.online{
-  float: right;
-}
-.online{
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50px;
-}
-.online:hover{
-  background-color: deepskyblue;
-}
-.online a{
-  display: inline-block;
-  width: 80px;
-  height: 30px;
-  border-radius: 50px;
-  border: 1px solid deepskyblue;
-  transition: all .3s linear;
-}
-.online a:hover{
-  color:#fff;
-}
-/********最底部********/
-.f-copyright{
   width: 1200px;
-  height: 82px;
-  margin: 0 auto;
-  position: relative;
 }
-.brand{
-  font: 12px "microsoft yahei";
+.end-content ul li{
+  height: 25px;
+  line-height: 25px;
 }
-.focus-vivo{
-  position: absolute;
-  top:0;
-  right: 0;
+.end-content ul li:first-child{
+  margin-bottom:5px;
+  font-size: 17px;  
+
 }
-.focus-vivo li{
-  float: right;
-  margin: 0 10px;
-  font: 12px "microsoft yahei";
+.end-bottom{
+  font-size: 14px;
+  color:#999;
+  margin-top:20px; 
+  text-align: center
+}
+.end-bottom p{
+  margin: 10px 0;
 }

@@ -1,10 +1,6 @@
-
-
-
 header{
     width: 100%;
     min-height: 100px;
-    background-color: #0190dd;
 }
 .index-body{
     position: relative;
@@ -306,18 +302,6 @@ header{
 
 
 
-.line{
-    margin: 50px 0 20px 0;
-    height: 3px;
-    background: -webkit-linear-gradient(left, purple ,#0f0, red,#ff0,#0ff); 
-    background: -o-linear-gradient(right, purple ,#0f0, red,#ff0,#0ff);
-    background: -moz-linear-gradient(right, purple ,#0f0, red,#ff0,#0ff); 
-    background: linear-gradient(to right, purple ,#0f0, red,#ff0,#0ff); 
-}
 
-/*****footer***/
-footer{
-    width: 100%;
-    min-height: 100px;
-    background-color: #0190dd;
-}
+
+

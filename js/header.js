@@ -7,7 +7,7 @@
     }).then(()=>{
         //css效果
         $('.search-box i').hover(function(){
-            $(this).prev().css({'width':'240px','border-bottom':'1px solid #1b6d85'});
+            $(this).prev().css({'width':'350px','border-bottom':'1px solid #1b6d85'});
         })
 
         $('.head-nav a').click(e=>{
@@ -21,12 +21,14 @@
         })
     })
 
-    $.ajax({
-        url:'footer.html',
-        success:function(data){
-            $('footer').html(data)
-        }
-    })
+    if($('footer').length!=0){
+         $.ajax({
+            url:'footer.html',
+            success:function(data){
+                $('footer').html(data)
+            }
+        })
+    }
 })();
 
 
