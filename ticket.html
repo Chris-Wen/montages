@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Montage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Montage</title>
+    <!--<link href="css/bootstrap.css" rel="stylesheet">-->
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/ticket.css"/>
+</head>
+<body>
+    <!--1、页面头部-->
+    <header></header>
+    <div class="main">
+		<div id='bookInfo' style='display:none'>
+			<div class="book-info" ></div>
+			<div class="infos" >
+			  <h2>提示</h2>
+			<p class="info1">每个订单最多选择4个座位</p>
+			<button data-type="close">确定</button>
+		  </div>
+		</div>
+		
+
+        <div class="ticket-body flex">
+           <div class="ticket-left">
+               <div class="seat-top">
+                   <p>杭州比高电影城五号厅 </p>
+                   <p>（剩余<span data-type="counts">129</span>个座位）</p>
+               </div>
+               <div class='flex seat-box'>
+						<table aling='center' class='row'>
+							<tr>
+								<td>1排</td>
+							</tr>
+							<tr>
+								<td>2排</td>
+							</tr>
+							<tr>
+								<td>3排</td>
+							</tr>
+							<tr>
+								<td>4排</td>
+							</tr>
+							<tr>
+								<td>5排</td>
+							</tr>
+							<tr>
+								<td>6排</td>
+							</tr>
+							<tr>
+								<td>7排</td>
+							</tr>
+						</table >
+						<table align='center' id='seats'>
+							<!-- <tr>
+								<td>
+									<i class="seat" data-name="1排19座"></i>
+									<i class="seated" data-name="1排18座"></i>
+									<i class="seat" data-name="1排17座"></i>
+									<i class="seat" data-name="1排16座"></i>
+									<i class="seat"></i>
+									<i class="seat"></i>
+									<i id='s7' class="seat"></i>
+									<i id='s8' class="seat"></i>
+								</td>
+							</tr> -->
+						</table>
+               </div>
+					<div class="seat-end">
+						<span><i></i>可选座位</span>
+						<span><i></i>已选座位</span>
+						<span><i></i>不可选座位</span>
+						<span><i></i>情侣座位</span>
+					</div>
+					<p class="seat-info">提示：您选座时，留下了单个座位，系统已为您自动关联选座</p>
+           </div>
+           <div class="ticket-right">
+				  <p class="right-top">电影票</p>
+				  <div class="film flex">
+					  <img src="img/movie/onsale/onsale1.jpg" alt="">
+					   <p><span>《 银翼杀手2049 》</span><br/>
+					  	&nbsp;&nbsp;&nbsp;&nbsp;类型:科幻/惊悚</p>
+				  </div>
+				  <div class="content ">
+						<p>影院：&nbsp;&nbsp;<strong>杭州比高电影城</strong></p>
+						<p>版本：&nbsp;&nbsp;<strong>2D&nbsp;英文版</strong></p>
+						<p>场次：&nbsp;&nbsp;<strong>10月29日&nbsp;22:00</strong></p>
+						<div class=" flex"> 
+							<span class="ticket-seat">座位：</span>
+							<div class="tickets" data-type="ticket">
+								<!-- <p><span>5排13座</span><em></em></p>	 -->
+							</div>
+						</div>
+						<p>票价：&nbsp;&nbsp;<strong>45/张</strong></p>
+						<p>票数：&nbsp;&nbsp;<strong data-seat="counts">0</strong></p>
+				  </div>
+				  <div class="total">
+					  总计：&nbsp;&nbsp;<span class="total-price" data-type="price">￥0</span>
+				  </div>
+				  <label>接受兑换码手机号码：</label>
+				  <input type="text" pattern='1[3|4|5|7|8][0-9]\d{8}' placeholder="请输入手机号码" required/>
+				  <button class="button" data-type="submit">下一步</button>
+				  <div class="tip-content">
+					  <p><b>温馨提示</b>：</p>
+					  <p style='color:red;margin:5px 0;'>
+						  温馨提示：观看特殊影片（VIP厅、IMAX、IMAX3D、XLAND厅、4D厅、ScreenX厅）时，身高不足1.3米的儿童也需购票入场
+					  </p>
+					  <p>本场座位图及票务信息由影院提供;</p>
+				  </div>
+           </div>
+        </div>
+    </div>
+	<footer></footer>
+<script src='js/jquery.js'></script>
+<script src='js/header.js'></script>
+<script src='js/ticket.js'></script>
+</body>
+</html>

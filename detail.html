@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Montage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Montage</title>
+    <!--<link href="css/bootstrap.css" rel="stylesheet">-->
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+<!--     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/detail.css"/>
+</head>
+<body>
+	<div id='popup' style='display:none;'>
+		<div class="login-mask" ></div>
+		<div class="popup-login" >
+			<p class='close'><a title='关闭' href='javascript:;'>X</a></p>
+			<dl>
+				<dt>岁月无情，光影留声</dt>
+				<dd>For people who love movies</dd>
+			</dl>
+			<ul class="popup-input">
+				<li><input type="text" placeholder='请输入用户名'/><i></i></li>
+				<li><input type="password" placeholder='请输入密码'/><i></i></li>
+			</ul>
+			<button>登录</button>		
+	  	</div>
+	</div>
+
+	<div class="main">
+
+	  <!--1、页面头部-->
+	  <header>
+
+	  </header>
+	  <div class="detail-body">
+	  		<div class="top-mask"></div>
+	  		<div class="content">
+	  			<div class="detail flex">
+	  				<div class="img">
+	  					<div class="main-img">
+	  						<img src="img/movie/presale/presale1.jpg">
+	  					</div>
+	  					<p>相关海报</p>
+	  					<img src="img/movie/presale/presale1.jpg" >
+	  					<img src="img/movie/presale/presale1.jpg" >
+	  				</div>
+	  				<div class="film-info">
+	  					<h1>雷神3：诸神黄昏 (2017)</h1>
+	  					<p>Thor: Ragnarok</p>
+	  					<div class="otherbox">
+	  						<span>130分钟</span>-
+	  						<span>动作/冒险/喜剧</span>-
+	  						<span>2017年11月3日中国上映</span>-
+	  						<span>3D/IMAX3D/中国巨幕</span>
+	  					</div>
+	  				</div>
+	  				<progress></progress>
+	  			</div>
+	  			
+	  		</div>
+	  </div>
+	  
+	  <footer>
+
+	  </footer>
+	</div>
+	 
+</body>
+<script src='js/jquery.js'></script>
+<!--<script src='js/index.js'></script>-->
+<script>
+	 $('#popup .login-mask').click(()=>{$('#popup').hide()})
+	 $('#popup .close a').click(()=>{$('#popup').hide()})
+</script>
+</html>

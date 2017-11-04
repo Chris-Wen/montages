@@ -1,0 +1,139 @@
+header,footer{
+   height: 100px;
+   background-color: #0f0
+}
+
+/*login-part popup dispose*/
+.login-mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  z-index: 100;
+}
+.popup-login{
+    position: absolute;
+    margin:auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 3px 2px 6px #000;  
+    border-radius: 10px;
+    z-index: 120;
+}
+.popup-login dl{
+    font-size: 25px; 
+}
+.popup-login dl dd{
+    color: #ccc;
+}
+.close-icon{
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    position: absolute;
+    background: url(../img/sprite.png) no-repeat -67px 0;
+    right: -20px;
+    top: -20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.popup-login b{
+    font-size: 22px;
+    text-align: center;
+}
+.popup-login .close{
+    text-align: right;
+    font-size:18px;
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    padding-right:15px;
+    box-sizing:border-box; 
+}
+.popup-login .close a:hover{
+    cursor: pointer;
+    color:#0190dd;
+}
+.popup-input li input{
+    width: 300px;
+    height: 40px;
+    margin: 20px auto;
+    border:1px solid #ccc;
+    padding-left:15px; 
+    border-radius: 5px;
+}
+.popup-input li input:focus{
+    outline:#0190DD  dashed thin;
+}
+.popup-login button{
+    margin:auto; 
+    width: 200px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: #0190dd;
+    color: white;
+    text-indent: 48px;
+    letter-spacing: 50px;
+    font-size: 1.1em;
+    outline: none;
+    border:0;
+    cursor: pointer;
+}
+.check-box{
+    height: 30px;
+    line-height: 30px;
+}
+.check-box input{
+    margin-left:30px ;
+ }
+.check-box a{
+    float: right;
+    text-align: right;
+}
+
+
+/***detail-body*****/
+.detail-body{
+    min-height: 500px;
+    background-color: #fff;
+    width: 100%;
+}
+.content{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+    padding: 30px 10px;
+}
+.img{
+    width: 30%;
+    text-align: center;
+}
+.main-img{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border:thick ridge #127BAB;
+    padding: 5px;
+}
+.main-img>img{
+    border:5px dashed black;
+}
+
+
+.film-info{
+    width: 68%;
+
+}

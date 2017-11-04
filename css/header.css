@@ -1,0 +1,144 @@
+.head-nav{
+    width: 100%;
+    min-height:50px;
+    margin: 0 auto;
+    background-color: #192332;
+    font-size: 16px;
+}
+.fixed{
+    position:fixed;
+    top:0;
+}
+.logo img{
+    display: block;
+    height: 60px;
+}
+.logo{
+    float: left;
+    margin-left: 50px;
+}
+.head-nav ul{
+    margin-left:20px ;
+    float: left;
+}
+.head-nav ul li{
+    margin: auto;
+    line-height: 60px;
+    float:left;
+    width: 80px;
+    text-align: center;
+}
+.head-nav ul li a{
+    color: #bebebe;
+    position:relative;
+}
+.head-nav ul li a:hover{
+    color:white;
+}
+/***search-box**/
+
+
+.search-box{
+	float:right;
+    position: relative;
+    height: 60px;
+    box-sizing: border-box;
+    margin-right:30px ;
+}
+.search-box>input{
+    border:0;
+	margin:auto 0;
+    width: 0;
+    height: 30px;
+    color: #ffffff;
+    background-color: transparent;
+    margin-top: 10px;
+    transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    padding-left: 10px;
+    outline: none;
+}
+.fa-position{
+    position: absolute;
+    margin: auto;
+    right: 0;
+    top:10px;
+    margin-top: 10px;
+    color: #d1d1d1;
+}
+/***login***/
+
+.login-box{
+    float: right;
+    line-height: 60px;
+    margin-right: 50px;
+    position: relative;
+}
+.login-box a{
+    margin: 0 20px;
+    position: relative;
+}
+.white-block{
+    position:absolute;
+    margin: 0 auto;
+    bottom: -27px;
+    left:10px;
+    width: 10px;
+    height: 10px;
+    background-color: #F5F5F5;
+    transform: rotate(45deg);
+    border:0;
+}
+/***** 隐藏的登录模块****/
+.login{
+    position: absolute;
+    right:-20px;
+    width: 300px;
+    min-height: 200px;
+    background-color: #fff;
+    z-index: 100;
+    box-shadow: 3px 2px 6px #000;  
+    padding:10%;
+    box-sizing: border-box;
+    display: none;
+    font-size: 14px;
+}
+.login p{
+    line-height: 20px;
+    text-align:center;
+}
+.login input.input-size{
+    outline: none;
+    margin-left: 20px;
+    width: 80%;
+    height: 30px;
+    border:0;
+    border-bottom:2px solid #686868;
+    border-radius: 5px;
+    padding-left:20px;
+    text-indent: 10px;
+}
+.login button{
+    margin-left:10%; 
+    width: 80%;
+    height: 35px;
+    border-radius: 20px;
+    background-color: #0190dd;
+    color: white;
+    text-indent: 48px;
+    letter-spacing: 50px;
+    font-size: 1.1em;
+}
+.check-box{
+    height: 30px;
+    line-height: 30px;
+}
+.check-box input{
+    margin-left:30px ;
+ }
+.check-box a{
+    float: right;
+    text-align: right;
+}
