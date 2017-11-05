@@ -7,11 +7,11 @@ body{
     background-color: #127BAB;  
 }
 .login-mask{
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.6;
+  opacity: 0.7;
   z-index: 100;
 }
 .popup-login{
@@ -61,6 +61,7 @@ body{
     line-height: 35px;
     padding-right:15px;
     box-sizing:border-box; 
+    
 }
 .popup-login .close a:hover{
     cursor: pointer;
@@ -105,9 +106,11 @@ body{
 
 
 /***detail-body*****/
+
 .detail-body{
+    padding-top:20px;
     margin-top:-80px;
-    min-height: 500px;
+    min-height: 600px;
     background-color: #fff;
     width: 100%;
     border-top-left-radius:20px; 
@@ -138,6 +141,180 @@ body{
 
 
 .film-info{
-    width: 68%;
+    width: 67%;
+    position: relative;
+}
+.sub-title{
+    margin: 10px 0;
+    font-size: 18px;    
+}
+.otherbox{
+    background-color: #444;
+    width: 80%;
+    height: 30px;
+    line-height: 30px;
+    color:white;
+    text-indent: 10px;
+    border-radius: 3px;
 
+}
+.division{
+    background-color: #127BAB;
+    height: 35px;
+    line-height: 35px;
+    margin: 10px 0;
+}
+.division a{
+    font-size: 16px;
+    color: white;
+    margin:0 20px; 
+}
+.division a:hover{
+    color: #ff8800
+}
+.saw{
+    text-indent: 20px;
+}
+.saw span{
+    margin:0 140px 0 50px; 
+}
+.progress span{
+    margin: 0  30px;
+}
+meter{
+    width: 150px;   
+}
+.film-details{
+    padding-left:20px;
+}
+.film-details strong{
+    margin:0 180px 0 10px;; 
+}
+.detail-item{
+    padding-left:27px;
+}
+.film-details dd{
+    margin: 5px 0;
+}
+.intro p{
+    text-align: justify;
+}
+
+/**********comments*****/
+.comments-body{
+    background-color: #127BAB;
+    padding-top:50px;
+}
+.comments{
+    margin: 0 auto;
+    width: 1200px;
+}
+.write{
+    height: 150px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: #0A4966;
+    margin-bottom:20px; 
+    padding:40px 80px 20px; 
+    color:white;
+}
+.mark-left dt{
+    margin-bottom:10px; 
+}
+.mark-left a{
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+    color:#000;
+    background-color: wheat;
+    font-size: 12px;
+    margin: 0 5px;
+}
+.mark-left a:hover{
+    background-color: #679C21;
+    color: wheat;
+}
+.icon-stars i:hover{
+    color: #679C21;
+}
+.icon-star{
+    color: #679C21;
+}
+.textarea-submit{
+    display: inline-block;
+    background-color: #0190dd;
+    width: 70px;
+    height: 23px;
+    line-height: 20px;
+    color:white;
+    border-radius: 10px; 
+}
+
+.comment-list{
+    background-color: #fff;
+    padding: 40px 80px;
+}
+.comment-item{
+    min-height: 150px;
+    border-bottom: 1px dashed #666;
+    padding: 10px 50px;
+}
+.user-info{
+    width: 20%;
+}
+.user-info p{
+    margin-bottom:15px; 
+}
+.user-text{
+    width: 75%;
+}
+.texts{
+    font-size: 16px;
+    color: #111;
+}
+.btn-reply{
+    display: inline-block;
+    width: 70px;
+    height: 20px;
+    line-height: 20px;
+    color:wheat;
+    border-radius: 10px; 
+    background-color: #679C21;
+    text-align: center
+}
+.btn-reply:hover{
+    color: white;
+    background-color: #679C00;
+}
+.reply-icon{
+    text-align: right;
+    font-size: 16px;
+    margin: 4px 0;
+}
+.reply-icon span{
+    margin: 0 40px 0 0;; 
+}
+.reply-icon span a{
+    margin-left: 10px;
+}
+.reply-icon span i:hover{
+    color:#0190dd;
+}
+.reply-item{
+    margin-top:10px;
+    border-bottom: 1px dashed #ccc;
+    color:#555;
+    padding-left: 30px;
+}
+
+.pages{
+    text-align: right;
+    padding-right:80px; 
+}
+.pages li{
+    display: inline-block;
+    
 }
