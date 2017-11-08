@@ -10,7 +10,7 @@
 	@$pno=$_REQUEST["pno"];
 	@$pageSize=$_REQUEST["pageSize"];
 
-	if(!$fid)$fid=1;
+
 	if(!$pno) $pno=1;
 	if(!$pageSize) $pageSize=10;  //单页默认显示10条
 

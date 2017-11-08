@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Montage</title>
     <!--<link href="css/bootstrap.css" rel="stylesheet">-->
-     <link rel="stylesheet" href="css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
 <!--     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/detail.css"/>
 </head>
 <body>
 	
-	<!--<div id='popup' class="popup-boxs">
+	<div id='popup' class="popup-boxs" style="display:none">
 		<div class="login-mask" ></div>
 		<div class="popup-login" >
 			<p class='close'><a title='关闭' href='javascript:;'>X</a></p>
@@ -30,7 +30,8 @@
 			</ul>
 			<button>登录</button>		
 	  	</div>
-	</div>-->
+	</div>
+	<div data-info="comments" class="comments-info"></div>
 	<header></header>
 	<div class="header-top"></div>
 	<div class="main">
@@ -39,53 +40,53 @@
 	  		<div class="content">
 	  			<div class="detail flex">
 	  				<div class="img">
-	  					<div class="main-img">
-	  						<img src="img/movie/presale/presale1.jpg">
+	  					<div class="main-img" id="poster">
+	  						<img src="img/movie/presale/presale1.jpg" onerror="this.src='img/film_default.jpg'">
 	  					</div>
 						<!--<progress></progress>-->
 	  				</div>
 	  				<div class="film-info">
-	  					<h1>雷神3：诸神黄昏 (2017)</h1>
-	  					<p class="sub-title">Thor: Ragnarok</p>
-	  					<div class="otherbox">
-	  						<span>130分钟</span>-
-	  						<span>动作/冒险/喜剧</span>-
-	  						<span>2017年11月3日中国上映</span>-
-	  						<span>3D/IMAX3D/中国巨幕</span>
-	  					</div>
-						<div>
-							<p class="division">
-								<a href="javascript:;">剧情</a>
-								<a href="javascript:;">角色介绍</a>
-								<a href="javascript:;">幕后揭秘</a>
-								<a href="javascript:;">更多资料</a>
-							</p>
-							<p class="saw">
-								<span>835人评分</span><span>10400想看</span>
-							</p>
-							<div >
-								<p class="progress">
-									<span>音乐&nbsp;&nbsp;<meter min="1" value="88" max="100" heigh="90"   low="80" optimum='10'></meter></span>
-									<span>画面&nbsp;&nbsp;<meter min="1" value="88" max="100" heigh="90" low="85" optimum='80'></meter></span>
-								</p>
-								<p class="progress">
-									<span>导演&nbsp;&nbsp;<meter min="1" value="88" max="100" low="88" heigh="95" optimum='50'></meter></span>
-									<span>故事&nbsp;&nbsp;<meter min="1" value="88" max="100" low="30" heigh="80" optimum='88'></meter></span>
-								</p>
-								<dl class="film-details">
-									<dd><strong>导演：</strong><span class="detail-item">塔伊加·维迪提</span></dd>
-									<dd><strong>编剧：</strong><span class="detail-item">克雷格·凯尔 克里斯托弗·约斯特</span></dd>
-									<dd><strong>国家地区：</strong><span>美国</span></dd>
-									<dd><strong>发行公司：</strong><span>华特·迪士尼电影工作室</span></dd>
-									<dd class="intro">
-										<strong>剧情：</strong>
-										<p>失去雷霆之锤的索尔被囚禁在宇宙的另一端，他不得不想方设法尽早赶回阿斯加德，阻止家园的毁灭和阿斯加德文明的终结，即所谓的“诸神黄昏”。整个事件背后的主谋是无情的死神海拉，她威力无穷，对整个宇宙造成了全新威胁。但首先，他必须要在一场致命的角斗士决斗中幸存下来，而他要面对的正是他曾经的战友、同为复仇者联盟成员的浩克。</p>
-									</dd>
-								</dl>
+						<div id="infoTitle">
+							<h1>雷神3：诸神黄昏 (2017)</h1>
+							<p class="sub-title">Thor: Ragnarok</p>
+							<div class="otherbox">
+								<span>130分钟</span>-
+								<span>动作/冒险/喜剧</span>-
+								<span>2017年11月3日中国上映</span>-
+								<span>3D/IMAX3D/中国巨幕</span>
 							</div>
 						</div>
+						<p class="division">
+							<a href="javascript:;">剧情</a>
+							<a href="javascript:;">角色介绍</a>
+							<a href="javascript:;">幕后揭秘</a>
+							<a href="javascript:;">更多资料</a>
+						</p>
+						<div id="infoContent">	
+							<!--<p class="saw">
+								<a class="film-score">7.8分</a><span>835人评分</span><span>10400想看</span>
+							</p>
+							<p class="progress">
+								<span>音乐&nbsp;&nbsp;<meter min="1" value="88" max="100" heigh="90"   low="80" optimum='10'></meter></span>
+								<span>画面&nbsp;&nbsp;<meter min="1" value="88" max="100" heigh="90" low="85" optimum='80'></meter></span>
+							</p>
+							<p class="progress">
+								<span>导演&nbsp;&nbsp;<meter min="1" value="88" max="100" low="88" heigh="95" optimum='88'></meter></span>
+								<span>故事&nbsp;&nbsp;<meter min="1" value="88" max="100" low="88" heigh="95" optimum='88'></meter></span>
+								<span class="box-office">票房：21亿元</span>
+							</p>
+							<dl class="film-details">
+								<dd><strong>导演：</strong><span class="detail-item">塔伊加·维迪提</span></dd>
+								<dd><strong>编剧：</strong><span class="detail-item">克雷格·凯尔 克里斯托弗·约斯特</span></dd>
+								<dd><strong>国家地区：</strong><span>美国</span></dd>
+								<dd><strong>发行公司：</strong><span>华特·迪士尼电影工作室</span></dd>
+								<dd class="intro">
+									<strong>剧情：</strong>
+									<p>失去雷霆之锤的索尔被囚禁在宇宙的另一端，他不得不想方设法尽早赶回阿斯加德，阻止家园的毁灭和阿斯加德文明的终结，即所谓的“诸神黄昏”。整个事件背后的主谋是无情的死神海拉，她威力无穷，对整个宇宙造成了全新威胁。但首先，他必须要在一场致命的角斗士决斗中幸存下来，而他要面对的正是他曾经的战友、同为复仇者联盟成员的浩克。</p>
+								</dd>
+							</dl>-->
+						</div>
 	  				</div>
-	  				
 	  			</div>
 	  		</div>
 	  </div>
@@ -98,7 +99,7 @@
 					<dd>
 						<img src="img/default_avatar.gif" alt="">
 						<a href="javascript:;">想看</a>
-						<span class="icon-stars">
+						<span class="icon-stars" data-icon="stars">
 							<i class="fa fa-star fa-lg star-icon"></i>
 							<i class="fa fa-star fa-lg star-icon"></i>
 							<i class="fa fa-star fa-lg star-icon"></i>
@@ -111,21 +112,21 @@
 							<i class="fa fa-star fa-lg star-icon"></i>
 							总分：10分
 						</span>
-						<p>用户名</p>
+						<p>匿名</p>
 					</dd>
 				</dl>
 				<form action="#">
-					<textarea rows="5" cols="60" maxlength='256' wrap="soft" placeholder="输入影评，字数限制256" ></textarea>
-					<p class="flex">
-						<a href="javascript:;"><i class="fa fa-pencil"></i> 写长影评</a>
-						<span><i>0</i>/256字
-					<input class="textarea-submit" type="button" value="发 表"></span>
-					</p>
+					<textarea data-type="area-number" onchange="" rows="5" cols="60" wrap="soft" placeholder="输入影评，字数限制256" ></textarea>
+					<div class="flex">
+						<p><a href="javascript:;"><i class="fa fa-pencil"></i> 写长影评</a></p>
+						<p><span ><i data-type="area-count">256</i>&nbsp;/&nbsp; 256</span>字&nbsp;&nbsp;&nbsp;&nbsp;
+						<input data-type="submit" class="textarea-submit" type="button" value="发 表"></p>
+					</div>
 				</form>
 			</div>	
 			
-			<dl class="comment-list">
-				<dd class="flex comment-item ">
+			<dl class="comment-list" id="commentList">
+				<!--<dd class="flex comment-item ">
 					<div class="user-info">
 						<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
 						<a href="javascript;:">用户名</a></p>
@@ -136,144 +137,30 @@
 						<p class="reply-icon">
 							<span><i class="fa fa-thumbs-up fa-lg"></i><a href="">0</a></span>
 							<span><i class="fa fa-commenting"></i><a href="javascript:;">1</a></span> </p>
-						<form action="#">
-							<textarea name="reply" cols="60" rows="2" placeholder="发表评论,字数限制210"></textarea>
-							<a class="btn-reply" href="#">回复</a>
+						<form action="#" class="reply-form">
+							<textarea  data-type="reply-area" class="reply-content" name="reply" cols="60" rows="1" placeholder="发表评论,字数限制210"></textarea>
+							<a class="btn-reply" href="1" data-type="reply">回复</a>
 						</form>
 						<ul id="replys">
 							<li class="reply-item">
-								<a href="javascript:;">用户名：</a>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</span>
+								<p ><a href="javascript:;">用户名</a><span>2017-10-11 12:00</span></p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</p>
 							</li>
 						</ul>
 					</div>
-				</dd>
-				<dd class="flex comment-item ">
-					<div class="user-info">
-						<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
-						<a href="javascript;:">用户名</a></p>
-						<p>2017.09.10   22:10</p>
-					</div>
-					<div class="user-text">
-						<p class="texts">影片中有这样一个场景：凯撒为了自己族群跟上校对峙，上校拿枪指着他，而族群中那只母猩猩颤颤巍巍的举着一块巨石站了起来，这一幕让我想了《坚不可摧》，那就是一个领袖可以被打倒，但绝不会被摧毁！整个系列在第一部就已经注定了人类的悲惨结局，这一部有过之而无不及！最后凯撒做在高地上看着自己的子民抵达了新的家园，缓缓地闭上了眼睛，特别具有史诗感！</p>
-						<p class="reply-icon">
-							<span><i class="fa fa-thumbs-up fa-lg"></i><a href="">0</a></span>
-							<span><i class="fa fa-commenting"></i><a href="javascript:;">1</a></span> </p>
-						<form action="#">
-							<textarea name="reply" cols="60" rows="2" placeholder="发表评论,字数限制210"></textarea>
-							<a class="btn-reply" href="#">回复</a>
-						</form>
-						<ul id="replys">
-							<li class="reply-item">
-								<a href="javascript:;">用户名：</a>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</span>
-							</li>
-						</ul>
-					</div>
-				</dd>
-				<dd class="flex comment-item ">
-					<div class="user-info">
-						<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
-						<a href="javascript;:">用户名</a></p>
-						<p>2017.09.10   22:10</p>
-					</div>
-					<div class="user-text">
-						<p class="texts">影片中有这样一个场景：凯撒为了自己族群跟上校对峙，上校拿枪指着他，而族群中那只母猩猩颤颤巍巍的举着一块巨石站了起来，这一幕让我想了《坚不可摧》，那就是一个领袖可以被打倒，但绝不会被摧毁！整个系列在第一部就已经注定了人类的悲惨结局，这一部有过之而无不及！最后凯撒做在高地上看着自己的子民抵达了新的家园，缓缓地闭上了眼睛，特别具有史诗感！</p>
-						<p class="reply-icon">
-							<span><i class="fa fa-thumbs-up fa-lg"></i><a href="">0</a></span>
-							<span><i class="fa fa-commenting"></i><a href="javascript:;">1</a></span> </p>
-						<form action="#">
-							<textarea name="reply" cols="60" rows="2" placeholder="发表评论,字数限制210"></textarea>
-							<a class="btn-reply" href="#">回复</a>
-						</form>
-						<ul id="replys">
-							<li class="reply-item">
-								<a href="javascript:;">用户名：</a>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</span>
-							</li>
-						</ul>
-					</div>
-				</dd>
-				<dd class="flex comment-item ">
-					<div class="user-info">
-						<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
-						<a href="javascript;:">用户名</a></p>
-						<p>2017.09.10   22:10</p>
-					</div>
-					<div class="user-text">
-						<p class="texts">影片中有这样一个场景：凯撒为了自己族群跟上校对峙，上校拿枪指着他，而族群中那只母猩猩颤颤巍巍的举着一块巨石站了起来，这一幕让我想了《坚不可摧》，那就是一个领袖可以被打倒，但绝不会被摧毁！整个系列在第一部就已经注定了人类的悲惨结局，这一部有过之而无不及！最后凯撒做在高地上看着自己的子民抵达了新的家园，缓缓地闭上了眼睛，特别具有史诗感！</p>
-						<p class="reply-icon">
-							<span><i class="fa fa-thumbs-up fa-lg"></i><a href="">0</a></span>
-							<span><i class="fa fa-commenting"></i><a href="javascript:;">1</a></span> </p>
-						<form action="#">
-							<textarea name="reply" cols="60" rows="2" placeholder="发表评论,字数限制210"></textarea>
-							<a class="btn-reply" href="#">回复</a>
-						</form>
-						<ul id="replys">
-							<li class="reply-item">
-								<a href="javascript:;">用户名：</a>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</span>
-							</li>
-						</ul>
-					</div>
-				</dd>
-				<dd class="flex comment-item ">
-					<div class="user-info">
-						<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
-						<a href="javascript;:">用户名</a></p>
-						<p>2017.09.10   22:10</p>
-					</div>
-					<div class="user-text">
-						<p class="texts">影片中有这样一个场景：凯撒为了自己族群跟上校对峙，上校拿枪指着他，而族群中那只母猩猩颤颤巍巍的举着一块巨石站了起来，这一幕让我想了《坚不可摧》，那就是一个领袖可以被打倒，但绝不会被摧毁！整个系列在第一部就已经注定了人类的悲惨结局，这一部有过之而无不及！最后凯撒做在高地上看着自己的子民抵达了新的家园，缓缓地闭上了眼睛，特别具有史诗感！</p>
-						<p class="reply-icon">
-							<span><i class="fa fa-thumbs-up fa-lg"></i><a href="">0</a></span>
-							<span><i class="fa fa-commenting"></i><a href="javascript:;">1</a></span> </p>
-						<form action="#">
-							<textarea name="reply" cols="60" rows="2" placeholder="发表评论,字数限制210"></textarea>
-							<a class="btn-reply" href="#">回复</a>
-						</form>
-						<ul id="replys">
-							<li class="reply-item">
-								<a href="javascript:;">用户名：</a>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</span>
-							</li>
-						</ul>
-					</div>
-				</dd>
-				<dd class="flex comment-item ">
-					<div class="user-info">
-						<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
-						<a href="javascript;:">用户名</a></p>
-						<p>2017.09.10   22:10</p>
-					</div>
-					<div class="user-text">
-						<p class="texts">影片中有这样一个场景：凯撒为了自己族群跟上校对峙，上校拿枪指着他，而族群中那只母猩猩颤颤巍巍的举着一块巨石站了起来，这一幕让我想了《坚不可摧》，那就是一个领袖可以被打倒，但绝不会被摧毁！整个系列在第一部就已经注定了人类的悲惨结局，这一部有过之而无不及！最后凯撒做在高地上看着自己的子民抵达了新的家园，缓缓地闭上了眼睛，特别具有史诗感！</p>
-						<p class="reply-icon">
-							<span><i class="fa fa-thumbs-up fa-lg"></i><a href="">0</a></span>
-							<span><i class="fa fa-commenting"></i><a href="javascript:;">1</a></span> </p>
-						<form action="#">
-							<textarea name="reply" cols="60" rows="2" placeholder="发表评论,字数限制210"></textarea>
-							<a class="btn-reply" href="#">回复</a>
-						</form>
-						<ul id="replys">
-							<li class="reply-item">
-								<a href="javascript:;">用户名：</a>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro similique facere eos quibusdam perspiciatis natus fuga doloribus, alias libero harum quas cumque eum inventore excepturi ab veniam soluta totam hic!</span>
-							</li>
-						</ul>
-					</div>
-				</dd>
-				<ul class="pages">
-					<li><button>上一页</button></li>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li><button>下一页</button></li>
-				</ul>
+				</dd>-->
+				<div class="pages">
+					<button>上一页</button>
+					<a>1</a>
+					<a class="page-active">2</a>
+					<a>3</a>
+					<button>下一页</button>
+				</div>
 			</dl>
 				
 		</div>
 	</div>
+	<footer></footer>
 	<script src='js/jquery.js'></script>
 	<script src="js/tools.js"></script>
 	<script src="js/header.js"></script>
