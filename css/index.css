@@ -93,7 +93,7 @@ header{
 .release {
     padding: 30px 0;
     width: 100%;
-    min-height: 400px;
+    min-height: 600px;
 }
 .release-title{
     height: 50px;
@@ -211,10 +211,10 @@ header{
     height: 190px;
 }
 .showbox img{
-    margin-top:-40px; 
     width: 125px;
     height: 190px;
     display: inline-block;
+    box-sizing: border-box;
 }
 .showbox img:hover{
     transform:  scale(1.05);
@@ -235,9 +235,20 @@ header{
 .show-content {
     font-size:14px;
     font-weight: 100;
+    text-align: center;
+}
+.pre-title{
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    width:140px;
+    font-size: 16px;
+    font-weight: 150;
 }
 .show-content>p{
-    margin: 10px 0;
+    white-space: wrap; 
+    width:140px;
+    margin: 8px 0;
     overflow: hidden;
 }
 .show-content .pre-button{

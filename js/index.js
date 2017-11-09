@@ -1,5 +1,7 @@
-(()=>{
-    //轮播图效果
+(()=>{   //轮播图效果
+    
+    "use strict"
+
     var slider=$("[data-type=slider]"),             //图片框
         point=$("[data-type=point]"),               //切换卡
         n=0,                                        //移动次数
@@ -102,33 +104,137 @@
 
 })();
 
+
+ //购票栏
 (()=>{
+    "use strict"
 
+    $.ajax({
+        type:'get',
+        url:'data/sale_info.php',
+        success:function(response){
+            console.log(response);
+            var onsale = response.onsale;
+            var presale = response.presale;
+            var html="";
 
+            //onsale
+            for(var n of onsale){
+                html += `<div class="card " data-type="card">
+                            <div class="card-img">
+                                <img src="${n.poster_pic}" alt="${n.sub_name}" onerror="this.src='img/film_default.jpg'"/>
+                                <div class="card-content">
+                                    <div class="card-content-info" data-class="info">
+                                        <h3>${n.fname}</h3>
+                                        <p><em>${Math.round(Math.random()*10000)+5000}</em>人想看 -${n.types}</p>
+                                        <p>导演：${n.director}</p>
+                                        <p>地区：${n.zone}</p>
+                                        <p style="color:#ff8800"><i style="font-size:20px">${n.price}</i> 元起</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="on-button" href="theater.html?fid=${n.fid}">选座购票</a>
+                        </div>`;
+            }
+            $("[data-show=onsale]").html(html);
 
-    $("[data-type=on-sale]").hover(function(){
-        if( !$(this).hasClass("t-acitve") ){
-            $(this).addClass("t-active")
-            .siblings().removeClass("t-active");
-            $("#onSale").show();
-            $("#preSale").hide();
+            //presale
+            html="";
+            for(let p of presale){
+                html += `<div class="card">
+                            <p class="showday">${p.release_time}</p>
+                            <div class="showbox flex">
+                                <div>
+                                    <img src="${p.poster_pic}" alt="${p.sub_name}" onerror="this.src='img/film_default.jpg'"/>
+                                </div>
+                                <div class="show-content">
+                                    <div class="pre-title">${p.fname}</div>
+                                    <p><em>${Math.round(Math.random()*10000)+5000}</em>人想看 -${p.types}</p>
+                                    <p>导演：${p.director}</p>
+                                    <p>地区：${p.zone}</p>
+                                    <a class="pre-button" href="theater.html?fid=${p.fid}">超前预售</a>
+                                </div>
+                            </div>
+                        </div>`;
+            }
+            // console.log(prehtml);
+            $("[data-show=presale]").html(html);
+
+        },
+        error:function(){
+            alert("网络错误，请检查");
+
         }
-        
-    })
-    $("[data-type=prev-sale]").hover(function(){
-        if( !$(this).hasClass("t-acitve") ){
-            $(this).addClass("t-active")
-            .siblings().removeClass("t-active");
-            $("#onSale").hide();
-            $("#preSale").show();
-        }
-        
+    }).then(()=>{
+
+        $("[data-type=on-sale]").hover(function(){
+            if( !$(this).hasClass("t-acitve") ){
+                $(this).addClass("t-active")
+                    .siblings().removeClass("t-active");
+                $("#preSale").hide();
+                $("#onSale").show(1000);
+            }
+            
+        })
+        $("[data-type=prev-sale]").hover(function(){
+            if( !$(this).hasClass("t-acitve") ){
+                $(this).addClass("t-active")
+                    .siblings().removeClass("t-active");
+                $("#onSale").hide();
+                $("#preSale").show(1000);
+            }
+            
+        })
+
+        //影片详情 展示
+        $("[data-type=card]").hover(function(){      
+            $(this).find(".card-content-info").css({"height":"250px","opacity":"0.8"});
+        },function(){
+            $(this).find(".card-content-info").css({"height":"40px"})
+        })
+
     })
 
-    //影片详情 展示
-    $("[data-type=card]").hover(function(){      
-        $(this).find(".card-content-info").css({"height":"250px","opacity":"0.8"});
-    },function(){
-        $(this).find(".card-content-info").css({"height":"40px"})
+    
+})();
+
+
+(()=>{
+    "use strict"
+
+    $.ajax({
+        type:'get',
+        url:'data/box_office_rank.php',
+        success:function(response){
+
+            var data = JSON.parse(response).showapi_res_body.datalist;
+
+            console.log(data);
+            var html="";
+            if(data){
+                for(var i=0; i<3; i++){
+                    
+                    html += `<div class="rank-item flex">
+                                <div>${data[i].Rank}</div>
+                                <div><img src="img/movie/box_office/rank${i+1}.jpg" onerror="this.src='img/film_default.jpg'"></div>
+                                <div>
+                                    <p>${data[i].MovieName}</p>
+                                    <p>周票房:${data[i].WeekAmount}</p>
+                                    <p>累计：${data[i].SumWeekAmount}万元</p>
+                                    <p>均价：${data[i].AvgPrice}元</p>
+                                </div>
+                            </div>`;
+                }
+                 console.log(html);
+                 console.log($("#rank"));
+                $("[data-type=rank]").html(html);
+            }
+            
+            
+        },
+        error:function(){
+            console.log("网络超时，请求排行榜失败");
+        }
     })
+
 })();

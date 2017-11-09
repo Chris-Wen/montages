@@ -104,4 +104,9 @@ body{
     margin: 10px 0;
     overflow: hidden;
 }
-
+.error{
+    width: 100%;
+    margin: 150px auto ;
+    text-align: center;
+    font-size: 18px;
+}

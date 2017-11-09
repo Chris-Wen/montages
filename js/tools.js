@@ -45,7 +45,7 @@ function getNowDate(index) {                     //获取当前时间 MM-dd
     if (strDate >= 0 && strDate <= 9) {
         strDate = "0" + strDate;
     }
-    var currentdate = month + seperator1 + strDa+"日";
+    var currentdate = month + seperator1 + strDate+"日";
     return currentdate;
 }
 
