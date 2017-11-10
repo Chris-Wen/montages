@@ -23,7 +23,7 @@
 					})
 			}
 	//获取页面初始化数据
-	var fid=1, uname="dingding"; //影片id   用户名；
+	var fid=5, uname="dingding"; //影片id   用户名；
 
 	//加载页面数据
 	$.ajax({
@@ -94,62 +94,69 @@
 
 
 	//加载评论
-	function loadComment(pno,pageSize=10){
+	function loadComment(pno=1,pageSize=10){
+		fid = 5;
 		$.ajax({
 				type:'get',
 				data:{ pno,fid,pageSize},
 				url:"data/details/comments.php",
 				success:function(response){
+					console.log(response);
 					var data=response.data;
 					var html="";
-					for(let d of data){
+
+					if(data.length>0){
+						for(let d of data){
 						html+=`	<dd class="flex comment-item ">
-								<div class="user-info">
-									<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
-									<a href="javascript:;">${d.c_uname}</a></p>
-									<p>${d.c_time}</p>
-								</div>
-								<div class="user-text">
-									<p class="texts">${d.content}</p>
-									<p class="reply-icon">
-										<span><i  data-type="agrees" class="fa fa-thumbs-up fa-lg"></i><a name="${d.cid}" href="javascript:;">${d.agrees}</a></span>
-										<span><i class="fa fa-commenting"></i><a href="javascript:;">${d.count}</a></span>
-									</p>
-									<p class="reply-info"></p>
-									<form action="#" class="reply-form">
-										<textarea data-type="reply-area" maxlength="210" class="reply-content" name="reply" cols="60" rows="1" placeholder="发表评论,字数限制210"></textarea>
-										<a data-type="reply" class="btn-reply" href="${d.cid}">回复</a>
-									</form>`;
-									if(d.count>0){
-										html += `<ul id="replys" name="${d.cid}" data-replies="count"></ul></div></dd>`;
+										<div class="user-info">
+											<p><span><img src="img/default_avatar.gif" alt="用户头像"></span>
+											<a href="javascript:;">${d.c_uname}</a></p>
+											<p>${d.c_time}</p>
+										</div>
+										<div class="user-text">
+											<p class="texts">${d.content}</p>
+											<p class="reply-icon">
+												<span><i  data-type="agrees" class="fa fa-thumbs-up fa-lg"></i><a name="${d.cid}" href="javascript:;">${d.agrees}</a></span>
+												<span><i class="fa fa-commenting"></i><a href="javascript:;">${d.count}</a></span>
+											</p>
+											<p class="reply-info"></p>
+											<form action="#" class="reply-form">
+												<textarea data-type="reply-area" maxlength="210" class="reply-content" name="reply" cols="60" rows="1" placeholder="发表评论,字数限制210"></textarea>
+												<a data-type="reply" class="btn-reply" href="${d.cid}">回复</a>
+											</form>`;
+											if(d.count>0){
+												html += `<ul id="replys" name="${d.cid}" data-replies="count"></ul></div></dd>`;
 
-									}else{
-									 	html+=`<ul id="replys"></ul></div></dd>` ;
-									}
-					}
-					html+=`<div class="pages" id="pages"></div>`;
+											}else{
+												html+=`<ul id="replys"></ul></div></dd>` ;
+											}
+							}
+							html+=`<div class="pages" id="pages"></div>`;
 
-					$("#commentList").html(html);
+							$("#commentList").html(html);
+					
 
-					//动态页码加载
-					response.pno = Number(response.pno);
-					var  html = `<a class="prev-page">上一页</a>`;
-					if(response.pno-2>0){
-						html += `<a href="${response.pno-2}">${response.pno-2}</a>`
-					}
-					if(response.pno-1>0){
-						html += `<a href="${response.pno-1}">${response.pno-1}</a>`
-					}
-					html += `<a class="page-active" href="${response.pno}">${response.pno}</a>`;
-					if(response.pno+1<=response.pageCount){
-						html += `<a href="${response.pno+1}">${response.pno+1}</a>`;
-					}
-					if(response.pno+2<=response.pageCount){
-						html += `<a href="${response.pno+2}">${response.pno+2}</a>`;
-					}
-					html +=`<a class="next-page">下一页</a>`;
+							//动态页码加载
+							response.pno = Number(response.pno);
+							var  html = `<a class="prev-page">上一页</a>`;
+							if(response.pno-2>0){
+								html += `<a href="${response.pno-2}">${response.pno-2}</a>`
+							}
+							if(response.pno-1>0){
+								html += `<a href="${response.pno-1}">${response.pno-1}</a>`
+							}
+							html += `<a class="page-active" href="${response.pno}">${response.pno}</a>`;
+							if(response.pno+1<=response.pageCount){
+								html += `<a href="${response.pno+1}">${response.pno+1}</a>`;
+							}
+							if(response.pno+2<=response.pageCount){
+								html += `<a href="${response.pno+2}">${response.pno+2}</a>`;
+							}
+							html +=`<a class="next-page">下一页</a>`;
 
-					$("#pages").html(html);
+							$("#pages").html(html);
+					}
+						
 				},
 				error:function(){
 					alert("网络错误，请检查...")
@@ -270,7 +277,8 @@
 
 				//分页点击
 				$("#pages").on("click","a",e=>{
-					e.preventDefault();
+					window.event? window.event.returnValue = false : e.preventDefault();
+
 					var $e=$(e.target);
 					if($e.hasClass('page-active')){ return }
 					//获取当前页码

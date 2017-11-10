@@ -199,7 +199,7 @@
 })();
 
 
-(()=>{
+(()=>{         //周票房排行榜
     "use strict"
 
     $.ajax({
@@ -209,7 +209,6 @@
 
             var data = JSON.parse(response).showapi_res_body.datalist;
 
-            console.log(data);
             var html="";
             if(data){
                 for(var i=0; i<3; i++){
@@ -225,11 +224,10 @@
                                 </div>
                             </div>`;
                 }
-                 console.log(html);
-                 console.log($("#rank"));
+                html +=`<a style="text-align:right">了解更多</a>`
+
                 $("[data-type=rank]").html(html);
             }
-            
             
         },
         error:function(){

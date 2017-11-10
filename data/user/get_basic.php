@@ -11,7 +11,7 @@ if(!$uid){
 }
 
 require_once('../init.php');
-$sql = "SELECT email,phone,avatar,user_name,gender FROM xz_user WHERE uid=$uid";
+$sql = "SELECT email,phone,avatar,user_name,gender FROM mtq_user WHERE uid=$uid";
 $result = mysqli_query($conn,$sql);
 
 if(!$result){       //SQL语句执行失败

@@ -11,7 +11,7 @@
 	@$pageSize=$_REQUEST["pageSize"];
 
 
-	if(!$pno) $pno=1;
+	if(!$pno || $pno==0) $pno=1;
 	if(!$pageSize) $pageSize=10;  //单页默认显示10条
 
 	$output=[
@@ -34,8 +34,10 @@
     $start=($output["pno"]-1)*$output["pageSize"];
     $count=$output["pageSize"];
 
+	 if($start<=0) $start=0;
 
-	$sql="SELECT A.cid,A.c_uname,A.agrees,A.c_time,A.content,(SELECT count(*) FROM mtq_reply WHERE A.cid=topic_id )count FROM mtq_comments A WHERE film_id=$fid ORDER BY A.c_time DESC  LIMIT $start,$count";
+	$sql="SELECT A.cid,A.c_uname,A.agrees,A.c_time,A.content,(SELECT count(*) FROM mtq_reply 
+	WHERE A.cid=topic_id )count FROM mtq_comments A WHERE film_id=$fid ORDER BY A.c_time DESC  LIMIT $start,$count";
 
 	$output["data"]=sql_execute($sql);
 

@@ -55,6 +55,4 @@ function popupHide(){                       //弹窗隐藏事件
 	}
 
 
-//轮播图
-
 

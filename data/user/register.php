@@ -10,7 +10,7 @@ header('Content-Type: application/json;charset=UTF-8');
 @$phone = $_REQUEST['phone'] or die('{"code":404,"msg":"phone required"}');
 
 require_once('../init.php');
-$sql = "INSERT INTO xz_user(uname,upwd,email,phone) VALUES('$uname','$upwd','$email','$phone')";
+$sql = "INSERT INTO mtq_user(uname,upwd,email,phone) VALUES('$uname','$upwd','$email','$phone')";
 $result = mysqli_query($conn,$sql);
 
 if(!$result){

@@ -29,6 +29,7 @@
     $param = createParam($paramArr,$showapi_secret);
     $url = 'http://route.showapi.com/578-1?'.$param; 
 
+
     $result = file_get_contents($url);
     
     echo $result;

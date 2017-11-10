@@ -278,6 +278,11 @@ meter{
     background-color: #fff;
     padding: 40px 80px;
 }
+.nocomments{
+    text-align: center;
+    min-height: 300px;
+}
+
 .comment-item{
     min-height: 100px;
     border-bottom: 1px dashed #666;

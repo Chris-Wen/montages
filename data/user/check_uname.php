@@ -9,7 +9,7 @@ header('Content-Type: application/json;charset=UTF-8');
 @$uname = $_REQUEST['uname'] or die('{"code":401,"msg":"uname required"}');
 require_once('../init.php');
 
-$sql = "SELECT uid FROM xz_user WHERE uname='$uname' LIMIT 1";
+$sql = "SELECT uid FROM mtq_user WHERE uname='$uname' LIMIT 1";
 $result = mysqli_query($conn,$sql);
 
 if(!$result){       //SQL语句执行失败
