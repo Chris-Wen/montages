@@ -114,6 +114,7 @@
 		html = `<p data-ticket="${Name}"><span>${Name}</span><em></em></p>`;
 		$("[data-type=ticket]").append(html);
 	}
+
 	//弹窗处理
 	var $bookInfo = $('#bookInfo');
 	function warning(){$bookInfo.show().find('.infos .info1').html('不要留下单独空座')}
@@ -133,4 +134,72 @@
 			window.location.reload()
 		})
 	},300*1000) 
+})();
+
+
+(()=>{
+
+	var fid = getKeyWord();
+
+	$.ajax({
+		type:'get',
+		url:'data/user/session_data.php',
+		success:function(response){
+			var uid = Number(response.uid);
+			var uname  = response.uname;
+			if(sessionStorage.username == uname){
+				$.ajax({
+					type:'get',
+					data:{uid},
+					url:"data/user/get_basic.php",
+					success:function(result){
+
+						if(result.code==200){
+							$("#phone").append(`<span style="color:#ff8800;font-size:16px;">${result.phone}</span>`);
+						}
+					},
+				})
+			}
+			
+			
+		},
+		error:function(){
+			console.log("session 失败")
+		}	
+		
+	})
+
+
+	if(fid){
+		$.ajax({
+			type:'get',
+			data:{fid},
+			url:"data/details/detail.php",
+			success:function(response){
+
+				var data = response[0];
+
+				var html = `<p class="right-top">电影票</p>
+									<div class="film flex">
+										<img src="${data.poster_pic}" alt="">
+										<p><span>${data.fname}</span><br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;类型:${data.types}</p>
+									</div>
+									<div class="content">
+										<p>影院：&nbsp;&nbsp;<strong>杭州比高电影城</strong></p>
+										<p>版本：&nbsp;&nbsp;<strong>2D&nbsp;中文版</strong></p>
+										<p>场次：&nbsp;&nbsp;<strong>${getNowDate()}&nbsp;22:00</strong></p>
+										<div class=" flex"> 
+											<span class="ticket-seat">座位：</span>
+											<div class="tickets" data-type="ticket"></div>
+										</div>
+										<p>票价：&nbsp;&nbsp;<strong>${Number(data.price)+Math.floor(Math.random()*10) }/张</strong></p>
+										<p>票数：&nbsp;&nbsp;<strong data-seat="counts">0</strong></p>
+									</div>`;
+				
+				$("#ticketInfo").prepend(html);
+			}	
+		})
+	}
+
 })();

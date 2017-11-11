@@ -7,11 +7,11 @@
 
    $output = [];
 
-   $sql = "SELECT count(*) num FROM mtq_details WHERE fname LIKE '%$kw%' OR sub_name LIKE '%$kw%'";
+   $sql = "SELECT count(*) num FROM mtq_details WHERE fname LIKE '%$kw%' OR sub_name LIKE '%$kw%' OR types LIKE '%$kw%' OR sale LIKE '%$kw%'";
 
    $output["count"] = sql_execute($sql)[0];
 
-   $sql = "SELECT fid,fname,director,sub_name,types,zone,synopsis,poster_pic FROM mtq_details WHERE fname LIKE '%$kw%' OR sub_name LIKE '%$kw%'";
+   $sql = "SELECT fid,fname,director,sub_name,types,zone,synopsis,poster_pic FROM mtq_details WHERE fname LIKE '%$kw%' OR sub_name LIKE '%$kw%' OR sale LIKE '%$kw%' OR types LIKE '%$kw%' LIMIT 15";
 
    $output["data"] = sql_execute($sql);
 

@@ -236,3 +236,27 @@
     })
 
 })();
+
+
+(()=>{
+
+    $("#comedy").click(()=>{
+        jumpTosearch(`喜剧`);
+    })
+
+    $("#war").click(()=>{
+        jumpTosearch(`战争`);
+    })
+    $("#love").click(()=>{
+        jumpTosearch(`爱情`);
+    })
+    $("#hot").click(()=>{
+        jumpTosearch(1);
+    })
+
+
+    function jumpTosearch(keyword){
+        location.href="search.html?kw="+keyword;
+    }
+
+})();

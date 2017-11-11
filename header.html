@@ -5,29 +5,31 @@
             </div>
             <ul>
                 <li><a href="index.html">首页 <i data-type="index" class="white-block"></i> </a></li>
-                <li><a href="theater.html">购票 <i data-type="theater"></i> </a></li>
+                <li><a href="theater.html?fid=1">购票 <i data-type="theater"></i> </a></li>
                 <li><a href="#">专栏 <i ></i> </a></li>
                 <li><a href="#">电影总览<i></i> </a></li>
             </ul>
 
-            <div class="login-box">
+            <div class="login-box" data-type="storage">
                 <a href="#">登录 <i></i> </a>|<a href="register.html">注册<i ></i> </a>
-                <div class="login">
+                <div class="login" id="form-login">
+                    <p style="text-align:right"><span data-type="close-box" style="cursor:pointer">X</span></p>
                     <p style="font-size: 1.2em;font-weight: bold">为爱电影的人</p>
                     <p >For people who love movies</p>
-                    <input class="input-size" type="text" placeholder="用户名"/>
-                    <input class="input-size" type="password" placeholder="密码"/><br/>
+                    <input id="username" name="uname" class="input-size" type="text" placeholder="用户名"/>
+                    <input id="password" name="upwd" class="input-size" type="password" placeholder="密码"/><br/>
                     <div class="check-box">
-                        <input type="checkbox" value="0"/><span >记住我</span>
+                        <input id="remember" type="checkbox" value="0"/><span >记住我</span>
                         <a href="#">忘记密码？</a>
                     </div>
-                    <button>登录</button>
+                    <div data-type="login-info" style="color:red;font-size:13px;text-align:center "></div>
+                    <button data-type="form-login">登录</button>
                 </div>
             </div>
 
 			<div class="search-box">
-				<input type="text" placeholder="请输入关键字"/>
-				<i class='fa fa-search fa-fw fa-position'></i>
+				<input id="searchInput" type="text" placeholder="请输入关键字"/>
+				<i id="searchIcon" style="cursor:pointer" class='fa fa-search fa-fw fa-position'></i>
 			</div>
         
     </div>

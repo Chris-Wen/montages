@@ -25,5 +25,6 @@ if(!$result){       //SQL语句执行失败
     $_SESSION['loginUname'] = $uname;
     $_SESSION['loginUid'] = $row['uid'];
     
+    echo ('{"code":200, "msg":"login succ"}');
   }
 }

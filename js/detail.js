@@ -22,12 +22,22 @@
 						}
 					})
 			}
-	//获取页面初始化数据
-	var fid=5, uname="dingding"; //影片id   用户名；
+
+
+	//获取页面初始化数据  用户名、影片fid
+	var username =  sessionStorage.username;
+	var fid = getKeyWord();
+
+	if( username ){		//评论匿名替换
+		$("[data-name=username]").html(username);
+	}
+
+
 
 	//加载页面数据
 	$.ajax({
 		type:'get',
+		data:{fid},
 		url:'data/details/detail.php',
 		success:function(response){
 
@@ -95,7 +105,6 @@
 
 	//加载评论
 	function loadComment(pno=1,pageSize=10){
-		fid = 5;
 		$.ajax({
 				type:'get',
 				data:{ pno,fid,pageSize},

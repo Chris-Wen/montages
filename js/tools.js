@@ -49,10 +49,42 @@ function getNowDate(index) {                     //获取当前时间 MM-dd
     return currentdate;
 }
 
+function getKeyWord(){                      //只传递一个参数
+    var url =window.location.search;
+	var fid =  url.substring(url.lastIndexOf('=')+1, url.length);
+    return Number(fid); 
+}
+
 function popupHide(){                       //弹窗隐藏事件
 		$(".login-mask").click(()=>{$('#popup').hide()})
 		$("#popup .close a").click(()=>{$('#popup').hide()})
 	}
 
 
+//cookie
+function setCookie(name,value,Days=7){
+
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+
+}  
+
+function getCookie(name){
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+ 
+    if(arr=document.cookie.match(reg))
+ 
+        return (arr[2]);
+    else
+        return null;
+} 
+
+function delCookie(name){
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null)
+        document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
 

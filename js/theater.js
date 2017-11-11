@@ -6,7 +6,9 @@
 	},100)
 
 
-	var fid=1;
+	var fid=getKeyWord();
+
+	
 	//加载页面数据
 	function loadPage(){
 		$.ajax({
@@ -17,11 +19,13 @@
 				var data = response[0];
 				var defaultImg = `img/film_default.jpg`;
 	
-				var html = `<img src="${data.poster_pic}" onerror="this.src='${defaultImg}'">`;
+				var html = `<a href="detail.html?fid=${data.fid}">
+									<img src="${data.poster_pic}" onerror="this.src='${defaultImg}' title="${data.fname}">
+								</a>`;
 				$("[data-type=img]").html(html);
 
 				var html =`<div>
-								<h1>${data.fname}</h1>
+								<h1><a href="detail.html?fid=${fid}">${data.fname}</a></h1>
 								<p class="sub-title">${data.sub_name}</p>
 								<div class="otherbox">
 								<span>${data.duration}分钟</span>-
@@ -39,7 +43,7 @@
 
 				$("[data-type=info]").html(html);
 
-				$("[data-type=jump]").attr("src",`ticket.html?fid=${data.fid}`);
+				$("[data-type=jump]").attr("href",`ticket.html?fid=${data.fid}`);
 			},
 			
 			error:function(){
