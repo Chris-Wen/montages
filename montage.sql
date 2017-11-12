@@ -26,11 +26,7 @@ INSERT INTO mtq_user VALUES
 (NULL, 'dang', '123456', 'dang@qq.com', '13501234568', 'img/avatar/default.png', '当当喵', 1),
 (NULL, 'dou', '123456', 'dou@qq.com', '13501234569', 'img/avatar/default.png', '窦志强', 1),
 (NULL, 'yaya', '123456', 'ya@qq.com', '13501234560', 'img/avatar/default.png', '秦小雅', 0),
-(NULL, '1111', '111111', '441977193@qq.com', '18357100796', NULL, NULL, NULL),
-(NULL, 'ABCD', '123456', '123@qq.com', '13538894495', NULL, NULL, NULL),
 (NULL, 'mohk', '123456', '11@qq.com', '13512312312', NULL, NULL, NULL),
-(NULL, '121123', 'w13945128995', '491000888@qq.com', '13213389258', NULL, NULL, NULL),
-(NULL, '555555', '5555555', '55555555@163.com', '13400000000', NULL, NULL, NULL),
 (NULL, 'xuyong', '123456', '123456789@qq.com', '15525623622', NULL, NULL, NULL),
 (NULL, 'admin', 'cxy930123', 'mail@xingyu1993.cn', '13580510164', NULL, NULL, NULL),
 (NULL, 'siyongbo', '900427', '616188545@qq.com', '18447103998', NULL, NULL, NULL),
@@ -38,9 +34,6 @@ INSERT INTO mtq_user VALUES
 (NULL, 'dingziqiang', '456456', '996534706@qq.com', '15567502520', NULL, NULL, NULL),
 (NULL, 'hdb2264068', 'huang123', '471062503@qq.com', '18898405759', NULL, NULL, NULL),
 (NULL, 'wenhua', '654321', 'liwenhua@tedu.cn', '15012345678', NULL, NULL, NULL),
-(NULL, '<img>', 'cxy930123', 'mail@xingyu1993.cn.1', '11111111111', NULL, NULL, NULL),
-(NULL, '</body>', 'cxy930123', 'mail@xingyu1993.cn.2', '22222222222', NULL, NULL, NULL),
-(NULL, '<img src=@>', 'cxy930123', 'mail@xingyu1993.cn.3', '33333333333', NULL, NULL, NULL),
 (NULL, '气航航', 'wyh961130', '1419591926@qq.com', '15927204115', NULL, NULL, NULL),
 (NULL, 'Jessy', 'ac210921', '123456@qq.com', '13523456789', NULL, NULL, NULL),
 (NULL, 'yuanxf', '123456', 'yuanxf@tedu.cn', '13537763301', NULL, NULL, NULL),
@@ -50,8 +43,6 @@ INSERT INTO mtq_user VALUES
 (NULL, 'qwe12345', '123123', '1191769510@qq.com', '15234010643', NULL, NULL, NULL),
 (NULL, '海贼王', '5124457', 'hxxcrocky@qq.com', '18826450879', NULL, NULL, NULL),
 (NULL, 'hanrufuyun00', 'hanrufuyun11', '458205630@qq.com', '13853114827', NULL, NULL, NULL),
-(NULL, 'li999999', 'li999999', 'limingdir@163.com', '18557512341', NULL, NULL, NULL),
-(NULL, '111111111111', '123456', '1057631733@qq.com', '15275106677', NULL, NULL, NULL),
 (NULL, 'tom', '123456', 'tom@tedu.cn', '13801234568', NULL, NULL, NULL);
 
 

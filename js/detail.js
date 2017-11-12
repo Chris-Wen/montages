@@ -69,7 +69,7 @@
 					</p>
 					<dl class="film-details">
 						<dd><strong>导演：</strong><span class="detail-item">${data.director}</span></dd>
-						<dd><strong>编剧：</strong><span class="detail-item">${data.writer}</span></dd>
+						<dd><strong>编剧：</strong><span class="detail-item">${data.wirter}</span></dd>
 						<dd><strong>国家地区：</strong><span>${data.zone}</span></dd>
 						<dd><strong>发行公司：</strong><span>${data.distributor}</span></dd>
 						<dd class="intro">
@@ -110,7 +110,6 @@
 				data:{ pno,fid,pageSize},
 				url:"data/details/comments.php",
 				success:function(response){
-					console.log(response);
 					var data=response.data;
 					var html="";
 
@@ -187,10 +186,10 @@
 					var $this = $(e.target).next();
 					var count = parseInt($this.html());
 					var tid = parseInt( $this.attr("name") );
-					console.log(123);
+
 
 					//用户未登录，弹出登录框，
-					if(!uname){$('#popup').show();return;}
+					if(!username){$('#popup').show();return;}
 					//已点赞判断
 					if( $this.attr('href')=="true" ){
 						$this.parent().parent().next().html("<span>已过赞!</span>").show();
@@ -205,7 +204,7 @@
 						data:{count,tid},
 						url:'data/details/addagree.php',
 						success:function(res){
-							console.log(res);
+
 							$this.attr("href","true").html(count)
 									.prev().addClass("agreement")
 									.parent().parent().next().html("<span>点赞成功</span>").show();
@@ -219,35 +218,8 @@
 				})
 
 
-				// 提交评论
-				$("[data-type=submit]").click(()=>{
-					// 获取评论内容
-					var areaValue=$("[data-type=area-number]").val();
-
-					if(!uname){    //判断用户登录与否
-							$('#popup').show();
-							return;
-					}
-					if( areaValue ){     
-						$.ajax({
-							type:"post",
-							data:{film_id:fid,uname:uname,content:areaValue},
-							url:"data/details/input.php",
-							success:function( response ){
-								console.log(response);
-								$("[data-info=comments]").html("<span>评论成功!</span>").show();
-								setTimeout(()=>{ $("[data-info=comments]").hide(800) },1500);
-								// 加载评论
-								loadComment(); 
-								$("[data-type=area-number]").val("");
-							},
-							error:function(){
-								$("[data-info=comments]").html("<span>评论失败，请稍后再试</span>").show();
-								setTimeout( ()=>{$("[data-info=comments]").hide(800)},1500)
-							}
-						})
-					}
-				})
+				
+				
 
 				//提交回复
 				$("[data-type=reply]").click(e=>{
@@ -257,18 +229,18 @@
 					//阻止默认行为
 					window.event? window.event.returnValue = false : e.preventDefault();
 
-					if(!uname){  $('#popup').show(); return; }   //判断登录状态
+					if(!username){  $('#popup').show(); return; }   //判断登录状态
 					if( areaReply ){
 						$.ajax({
 							type:"post",
-							data:{cid:cid,uname:uname,content:areaReply},
+							data:{cid:cid,uname:username,content:areaReply},
 							url:"data/details/input.php",
 							success:function( response ){
 								$this.parent().prev().html("<span>回复成功!</span>").show();
 								setTimeout(()=>{ $this.parent().prev().hide(800) },1500);
 
 								var html=`<li class="reply-item">
-												<p ><a href="javascript:;">${uname}</a><span>${getNowFormatDate()}</span></p>
+												<p ><a href="javascript:;">${username}</a><span>${getNowFormatDate()}</span></p>
 												<p>${areaReply}</p>
 											</li>`;
 								$this.parent().next().prepend(html);
@@ -310,4 +282,62 @@
 	}
 	loadComment();
 	
+// 提交评论
+	$("[data-type=submit]").click(()=>{
+
+			// 获取评论内容
+			var areaValue=$("[data-type=area-number]").val();
+
+			if(!username){    //判断用户登录与否
+					$('#popup').show();
+					return;
+			}
+			if( areaValue ){  
+ 
+				$.ajax({
+					type:"post",
+					data:{film_id:fid,uname:username,content:areaValue},
+					url:"data/details/input.php",
+					success:function( response ){
+
+						$("[data-info=comments]").html("<span>评论成功!</span>").show();
+						setTimeout(()=>{ $("[data-info=comments]").hide(800) },1500);
+						// 加载评论
+						loadComment(); 
+						$("[data-type=area-number]").val("");
+					},
+					error:function(){
+						$("[data-info=comments]").html("<span>评论失败，请稍后再试</span>").show();
+						setTimeout( ()=>{$("[data-info=comments]").hide(800)},1500)
+					}
+				})
+			}
+		})
+
+
+
+	$("[data-detail=submit]").click(()=>{
+		var uname = $("#inputName").val();
+		var upwd = $("#inputUpwd").val();
+
+		if( uname&&upwd ){
+			
+			$.ajax({
+				type:'get',
+				data:{uname,upwd},
+				url:'data/user/login.php',
+				success:function( response ){
+
+					if(response.code==200){
+						sessionStorage.username = uname;
+						window.location.reload();        
+
+					} else if (response.code === 201) {       //登录失败
+						
+						$("[data-detail=login-info]").html('<p>登录失败！用户名或密码错误</p>');
+					}
+				}
+			})
+		}
+	})
 })();
